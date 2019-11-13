@@ -1,8 +1,10 @@
 
 export const GET_BOUQUETES = 'GET_BOUQUETES';
+export const SEARCH_BOUQUETES = 'SEARCH_BOUQUETES';
 
 export const initialState = {
-  bouquetes: []
+  bouquetes: [],
+  stashBouquetes: [],
 }
 
 export const reducer = (state, action) => {
@@ -11,8 +13,14 @@ export const reducer = (state, action) => {
     case GET_BOUQUETES:
       return {
         ...state,
-        bouquetes: [...payload]
+        bouquetes: [...payload],
+        stashBouquetes: [...payload],
       }
+    case SEARCH_BOUQUETES:
+        return {
+          ...state,
+          bouquetes: [...state.stashBouquetes].filter(({name}) => name.toLowerCase().includes(payload))
+        }
     default:
       return {
         ...state

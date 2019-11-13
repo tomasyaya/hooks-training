@@ -9,7 +9,7 @@ class BouquetesService {
 
   async getBouquetes() {
     try {
-      const {data} = this.api.get('/');
+      const {data} = await this.api.get('/');
       return data;
     } catch(e) {
       console.log(e);
@@ -18,7 +18,7 @@ class BouquetesService {
 
   async getBouquete(id) {
     try {
-      const {data} = this.api.get(`/${id}`);
+      const {data} = await this.api.get(`/${id}`);
       return data;
     } catch(e) {
       console.log(e);
@@ -27,7 +27,7 @@ class BouquetesService {
 
   async createBouquete(id, body) {
     try {
-      const {data} = this.api.post(`/${id}`, body);
+      const {data} = await this.api.post(`/${id}`, body);
       return data;
     } catch(e) {
       console.log(e);
@@ -36,7 +36,7 @@ class BouquetesService {
 
   async updateBouquete(id, body) {
     try {
-      const {data} = this.api.put(`/${id}`, body);
+      const {data} = await this.api.put(`/${id}`, body);
       return data;
     } catch(e){
       console.log(e);
@@ -45,7 +45,7 @@ class BouquetesService {
 
   async deleteBouquete(id) {
     try {
-      const {data} = this.api.delete(`/${id}`);
+      const {data} = await this.api.delete(`/${id}`);
       return data;
     } catch(e) {
       console.log(e);
