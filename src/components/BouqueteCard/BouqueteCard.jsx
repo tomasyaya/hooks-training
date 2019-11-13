@@ -1,12 +1,18 @@
 import React from 'react';
-import {Container, Wrapper, Image} from './styles';
 import {useLazyLoading} from '../../hooks/useLazyLoading';
+import {
+    Container, 
+    Wrapper, 
+    Image, 
+    Button,
+} from './styles';
 
 const BouqueteCard = ({
-    id,
-    name,
-    image,
+    handleClick,
     price,
+    image,
+    name,
+    id,
 }) => {
     const [ show, element ] = useLazyLoading()
     return(
@@ -14,6 +20,7 @@ const BouqueteCard = ({
             {   
                 show &&
                 <Container>
+                    <Button onClick={() => handleClick(id)}>Remove</Button>
                     <Image src={image} alt={name} />
                     <p>{name}</p>
                     <p>{price}</p>

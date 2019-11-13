@@ -11,15 +11,16 @@ const Home = () => {
     handleSearch,
     handleSubmit,
     handleChange,
+    handleClick,
     inputs,
     state: {
       bouquetes
     },
   } = useContext(BouquetesContext);
 
-  useEffect(() => { getBouquetes() },[getBouquetes])
+  useEffect(() => { getBouquetes() },[])
 
-  const displayBouquetes = bouquetes.map(({id, ...bouquete}) => <BouqueteCard key={id} {...bouquete} />);
+  const displayBouquetes = bouquetes.map(({id, ...bouquete}) => <BouqueteCard key={id} id={id} {...bouquete} handleClick={handleClick} />);
   return(
     <div>
       <div>

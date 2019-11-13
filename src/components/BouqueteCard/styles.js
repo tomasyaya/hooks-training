@@ -23,8 +23,17 @@ export const Container = styled.div`
     animation: ${showAnimtion} 3s ease-in;
     box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.25);
     margin: 0 10px;
+    padding: 10px;
 `
 export const Image = styled.img`
     height: 100px;
     width: 100px;
+`
+
+export const Button = styled.button`
+  border: none;
+  font-weight: bold;
+  background: none;
+  margin-left: 200px;
+  margin-bottom: -20px;
 `

@@ -25,9 +25,9 @@ class BouquetesService {
     }
   };
 
-  async createBouquete(id, body) {
+  async createBouquete(body) {
     try {
-      const {data} = await this.api.post(`/${id}`, body);
+      const {data} = await this.api.post(`/`, body);
       return data;
     } catch(e) {
       console.log(e);
