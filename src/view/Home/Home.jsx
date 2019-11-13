@@ -1,18 +1,14 @@
 import React, {useEffect, useContext} from 'react';
 import {BouquetesContext} from '../../provider/BouquetesProvider';
 import BouqueteCard from '../../components/BouqueteCard/BouqueteCard';
-import {BouquetesContainer, Jumbotron} from './styles';
+import {BouquetesContainer, Jumbotron, Title, Container} from './styles';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import Form from '../../components/Form/Form';
 
 const Home = () => {
   const {
     getBouquetes,
     handleSearch,
-    handleSubmit,
-    handleChange,
     handleClick,
-    inputs,
     state: {
       bouquetes
     },
@@ -22,16 +18,9 @@ const Home = () => {
 
   const displayBouquetes = bouquetes.map(({id, ...bouquete}) => <BouqueteCard key={id} id={id} {...bouquete} handleClick={handleClick} />);
   return(
-    <div>
-      <div>
-        <Form
-          onSubmit={handleSubmit}
-          onChange={handleChange}
-          inputs={inputs}
-        />
-      </div>
-      <div>
+    <Container>
         <Jumbotron>
+          <Title>Bouquetes Service</Title>
           <SearchBar
             type='text'
             placeholder='Search'
@@ -41,8 +30,7 @@ const Home = () => {
         <BouquetesContainer>
           { displayBouquetes }
         </BouquetesContainer>
-      </div>
-    </div>
+    </Container>
   )
 }
 

@@ -1,11 +1,12 @@
 import React from 'react';
+import {Input, CustomForm, Button, Span} from './styles';
 
 const Form = ({
     inputs,
     onChange,
     onSubmit,
 }) => {
-    const displayInputs = inputs.map(({name, value}, i) => <input 
+    const displayInputs = inputs.map(({name, value}, i) => <Input 
                 key={i}
                 placeholder={name}    
                 name={name} 
@@ -14,12 +15,12 @@ const Form = ({
             />
         );
     return(
-        <form onSubmit={onSubmit}>
+        <CustomForm onSubmit={onSubmit}>
             { displayInputs }
-            <button type='submit'>
-                create
-            </button>
-        </form>
+            <Button type='submit'>
+                <Span>Add</Span>
+            </Button>
+        </CustomForm>
     );
 };
 

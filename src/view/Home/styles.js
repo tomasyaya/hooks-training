@@ -13,3 +13,14 @@ export const Jumbotron = styled.div`
     align-items: center;
     margin: 20px auto;
 `
+
+export const Title = styled.p`
+    font-family: Roboto;
+    font-size: 30px;
+    color: #c18ff0;
+    font-width: bold;
+`
+
+export const Container = styled.div`
+    padding-top: 100px;
+`
